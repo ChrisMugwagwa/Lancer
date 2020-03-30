@@ -1,6 +1,4 @@
 # Lancer
-Lets see what happens
-grandeur Vegah
-
-
-where is the flutter app
+Lancer React Application. A Networking platform for audio-visual creatives
+Grandeur Vegah
+Christian Mugwagwa
