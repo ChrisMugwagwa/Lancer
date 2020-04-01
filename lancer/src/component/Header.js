@@ -5,7 +5,7 @@ import { Nav } from 'react-bootstrap';
 export default class Header extends Component {
     render(){
         return(
-            <Navbar collapseOnSelect expand='lg' bg='dark' variant='dark'>
+            <Navbar collapseOnSelect expand='lg' bg='dark' variant='dark' className="header">
                 <Navbar.Brand>Lancer</Navbar.Brand>
                 <Navbar.Collapse id='responsive-navbar-nav'>
                     <Nav.Link href="#home">Home</Nav.Link>
