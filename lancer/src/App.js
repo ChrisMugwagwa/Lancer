@@ -4,16 +4,24 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Header from './component/Header';
 import Splash from './component/Splash';
+import Footer from './component/Footer';
 
 function App() {
   return (
     
     <div className="App">
-      <Header className="header"></Header>
-      <Splash className="splash"></Splash>
-     {/*
-      <Footer className="footer"></Footer>
-     -->*/}
+      <div id="header">
+      <Header></Header>
+      </div>
+      <div id="content">
+      <Splash></Splash>
+      </div>
+      <div id="footer">
+      <Footer></Footer>
+      </div>
+      
+      
+      
     </div>
   );
 }
