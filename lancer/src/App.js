@@ -17,10 +17,14 @@ function App() {
       <div id="content">
       <Splash name="Chris"></Splash>
       <ResultView></ResultView>
+      <br/>
       </div>
       <div>
        
       </div>
+      {/*
+
+      */}
       <div id="footer">
       <Footer>Follow us on Instagram, Twitter and TikTok</Footer>
       </div>

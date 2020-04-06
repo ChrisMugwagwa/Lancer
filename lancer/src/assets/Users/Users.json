@@ -1,0 +1,33 @@
+{
+    "users":[
+        {
+            "name":"Chantelle",
+            "age":22,
+            "occupation":"Web Developer",
+            "image":"img1.jpg",
+            "email":"endless_naps@gmail.com"
+        },
+        {
+            "name":"Michael",
+            "age":24,
+            "occupation":"Graphic Designer",
+            "image":"img2.jpg",
+            "email":"michaeltm96@gmail.com"
+        },
+        {
+            "name":"Kelly",
+            "age":20,
+            "occupation":"Sound Engineer",
+            "image":"img3.jpg",
+            "email":"kellykanwe@gmail.com"
+        },
+        {
+            "name":"Prabal",
+            "age":32,
+            "occupation":"Illustrator",
+            "image":"img4.jpg",
+            "email":"p.meister@gmail.com"
+        }
+    ]
+}
+       
