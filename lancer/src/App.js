@@ -5,6 +5,7 @@ import './App.css';
 import Header from './component/Header';
 import Splash from './component/Splash';
 import Footer from './component/Footer';
+import ResultView from './component/ResultView';
 
 function App() {
   return (
@@ -14,10 +15,14 @@ function App() {
       <Header></Header>
       </div>
       <div id="content">
-      <Splash></Splash>
+      <Splash name="Chris"></Splash>
+      <ResultView></ResultView>
+      </div>
+      <div>
+       
       </div>
       <div id="footer">
-      <Footer></Footer>
+      <Footer>Follow us on Instagram, Twitter and TikTok</Footer>
       </div>
       
       
