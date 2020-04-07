@@ -7,6 +7,7 @@ import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
 import Avatar from '@material-ui/core/Avatar';
 
+
 export default class Freelancer extends Component {
 
     constructor(props) {
@@ -21,7 +22,7 @@ export default class Freelancer extends Component {
         this.Users = require('../assets/Users/Users.json')
     }
 
-    displayInfo = () => {
+    displayInfo(){
         if (this.props.children) {
             try {
                 return <div>

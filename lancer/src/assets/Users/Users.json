@@ -5,29 +5,59 @@
             "age":22,
             "occupation":"Web Developer",
             "image":"img1.jpg",
-            "email":"endless_naps@gmail.com"
+            "email":"endless_naps@gmail.com",
+            "portfolio":[
+                "/chantelle/img1.jpg",
+                "/chantelle/img2.jpg",
+                "/chantelle/img3.jpg"
+            ]
         },
         {
             "name":"Michael",
             "age":24,
             "occupation":"Graphic Designer",
             "image":"img2.jpg",
-            "email":"michaeltm96@gmail.com"
+            "email":"michaeltm96@gmail.com",
+            "portfolio":[
+                "/michael/img1.jpg",
+                "/michael/img2.jpg",
+                "/michael/img3.jpg"
+            ]
         },
         {
             "name":"Kelly",
             "age":20,
             "occupation":"Sound Engineer",
             "image":"img3.jpg",
-            "email":"kellykanwe@gmail.com"
+            "email":"kellykanwe@gmail.com",
+            "portfolio":[
+                "/kelly/img1.jpg",
+                "/kelly/img2.jpg",
+                "/kelly/img3.jpg"
+            ]
         },
         {
             "name":"Prabal",
             "age":32,
             "occupation":"Illustrator",
             "image":"img4.jpg",
-            "email":"p.meister@gmail.com"
+            "email":"p.meister@gmail.com",
+            "portfolio":[
+                "/prabal/img1.jpg",
+                "/prabal/img2.jpg",
+                "/prabal/img3.jpg"
+            ]
         }
+    ],
+    "occupations":[
+        "Web Developer",
+        "Illustrator",
+        "Photographer",
+        "Videographer",
+        "Producer",
+        "Graphic Designer",
+        "Artist",
+        "Sound Engineer/Technician"
     ]
 }
        
