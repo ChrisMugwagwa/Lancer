@@ -26,7 +26,7 @@ function App() {
 
       */}
       <div id="footer">
-      <Footer>Follow us on Instagram, Twitter and TikTok</Footer>
+      <Footer>Quis autem vel eum iure reprehenderit</Footer>
       </div>
       
       
