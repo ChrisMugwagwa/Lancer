@@ -4,6 +4,7 @@ import Container from '@material-ui/core/Container';
 import Freelancer from './Freelancer';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
+import RegistrationForm from './RegistrationForm';
 
 export default class ResultView extends Component {
     constructor(props) {
@@ -19,14 +20,14 @@ export default class ResultView extends Component {
         this.handleChange = this.handleChange.bind(this);
     }
 
-    editText(e) {
+    editText() {
         this.setState({
             mode: 'input'
         })
     }
 
-    saveText(e) {
-        this.setState(function (e) {
+    saveText() {
+        this.setState(function () {
             return {
                 mode: 'view',
                 text: this.state.inputtedText
@@ -36,7 +37,9 @@ export default class ResultView extends Component {
 
     clearSearch() {
         this.setState({
-            mode: 'edit'
+            mode: 'edit',
+            text: '',
+            inputtedText: ''
         })
     }
 
@@ -52,9 +55,10 @@ export default class ResultView extends Component {
                 <div>
                     <br />
                     <Button onClick={this.editText}>
-                        Edit
+                        Find a Lancer
                     </Button>
                     <hr />
+                    <RegistrationForm></RegistrationForm>
                 </div>
             );
         } else if (this.state.mode === 'input') {
@@ -78,22 +82,25 @@ export default class ResultView extends Component {
                     <h5>Here are all results for: {this.state.text}
                     </h5>
                     <hr />
-                    <Container>
-                        <div className="row col-md-12">
-                            <div className="col-md-3">
-                                <Freelancer>0</Freelancer>
+                    {this.state.text !== '' ?  
+                        <Container>
+                            <div className="row col-md-12">
+                                <div className="col-md-3">
+                                    <Freelancer>0</Freelancer>
+                                </div>
+                                <div className="col-md-3">
+                                    <Freelancer>1</Freelancer>
+                                </div>
+                                <div className="col-md-3">
+                                    <Freelancer>2</Freelancer>
+                                </div>
+                                <div className="col-md-3">
+                                    <Freelancer>3</Freelancer>
+                                </div>
                             </div>
-                            <div className="col-md-3">
-                                <Freelancer>1</Freelancer>
-                            </div>
-                            <div className="col-md-3">
-                                <Freelancer>2</Freelancer>
-                            </div>
-                            <div className="col-md-3">
-                                <Freelancer>3</Freelancer>
-                            </div>
-                        </div>
-                    </Container>
+                        </Container> :
+                        <h5>Please go back and enter something into the search box</h5>
+                    }
                 </div>
             )
         }
