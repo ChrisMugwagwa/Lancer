@@ -15,9 +15,7 @@ export default class Freelancer extends Component {
         //TO-DO:
         // This is messy. Instead, use JSON.parse to turn into a JS object.
         // Then make this.Users point to the users array rather than the root object of the JSON file 
-
         //hide error message when information not found. display something more user friendly
-        
         //also if the search fails. just dont render the element()though there are cases wher you might want to
         this.Users = require('../assets/Users/Users.json')
     }
