@@ -8,11 +8,11 @@ export default class Header extends Component {
             <Navbar collapseOnSelect expand='lg' bg='dark' variant='dark' id="header">
                 <Navbar.Brand>Lancer</Navbar.Brand>
                 <Navbar.Collapse id='responsive-navbar-nav'>
-                    <Nav.Link href="#home">Home</Nav.Link>
-                    <Nav.Link href="#video">Video</Nav.Link>
-                    <Nav.Link href="#photography">Photography</Nav.Link>
-                    <Nav.Link href="#gdesign">Graphic Design</Nav.Link>
-                    <Nav.Link href="#register">Register</Nav.Link>
+                    <Nav.Link href="/">Home</Nav.Link>
+                    <Nav.Link href="/video">Video</Nav.Link>
+                    <Nav.Link href="/photography">Photography</Nav.Link>
+                    <Nav.Link href="/gdesign">Graphic Design</Nav.Link>
+                    <Nav.Link href="/register">Register</Nav.Link>
                 </Navbar.Collapse>
             </Navbar>
         );

@@ -27,7 +27,7 @@ export default class Freelancer extends Component {
             try {
                 return <div>
                     <Card>
-                    <img 
+                    <img alt="profilePic"
                         src={require('../assets/Users/' + this.Users.users[this.props.children].image)}
                         style={{ width: "100%", height: "100%" }}
                          />

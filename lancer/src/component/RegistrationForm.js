@@ -2,7 +2,6 @@ import React from 'react';
 //import { render } from 'react-dom';
 import Container from '@material-ui/core/Container';
 import Form from 'react-bootstrap/Form'
-import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button';
 
 export default function RegistrationForm(props) {

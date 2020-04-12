@@ -6,6 +6,12 @@ import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import RegistrationForm from './RegistrationForm';
 
+import {
+    Switch,
+    Route,
+    Link
+} from "react-router-dom";
+
 export default class ResultView extends Component {
     constructor(props) {
         super(props);
@@ -50,6 +56,68 @@ export default class ResultView extends Component {
     }
 
     render() {
+        return (
+            <Switch>
+                <Route exact path="/">
+                    <div>
+                        <br />
+                        <Link to="/search">
+                            <Button onClick={this.editText}>Find a Lancer</Button>
+                        </Link>
+                        <hr />
+                        <RegistrationForm></RegistrationForm>
+                    </div>
+                </Route>
+
+                <Route exact path="/search">
+                    <div>
+                        <br />
+                        <Link to="/">
+                        <Button onClick={this.clearSearch}> BACK</Button>
+                        </Link>
+                        <TextField placeholder="Search Here" onChange={this.handleChange} />
+                        <Link to="/search/results">
+                            <Button onClick={(e) => this.saveText(e)}>SEARCH</Button>
+                        </Link>
+                        <hr />
+                    </div>
+                </Route>
+
+                <Route exact path="/search/results">
+                    <div>
+                        <br />
+                        <Link to="/search">
+                        <Button onClick={this.clearSearch}> BACK</Button>
+                        </Link>
+                        <h5>Here are all results for: {this.state.text}
+                        </h5>
+                        <hr />
+                        {this.state.text !== '' ?
+                            <Container>
+                                <div className="row col-md-12">
+                                    <div className="col-md-3">
+                                        <Freelancer>0</Freelancer>
+                                    </div>
+                                    <div className="col-md-3">
+                                        <Freelancer>1</Freelancer>
+                                    </div>
+                                    <div className="col-md-3">
+                                        <Freelancer>2</Freelancer>
+                                    </div>
+                                    <div className="col-md-3">
+                                        <Freelancer>3</Freelancer>
+                                    </div>
+                                </div>
+                            </Container> :
+                            <h5>Please go back and enter something into the search box</h5>
+                        }
+                    </div>
+                </Route>
+
+            </Switch>
+        );
+
+        /*
         if (this.state.mode === 'edit') {
             return (
                 <div>
@@ -105,6 +173,6 @@ export default class ResultView extends Component {
             )
         }
 
-        else { return null; }
+        else { return null; }*/
     }
 }
