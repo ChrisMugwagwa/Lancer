@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../App.css';
 import Container from '@material-ui/core/Container';
-import Freelancer from './Freelancer';
+import Freelancer from './Freelancers';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import RegistrationForm from './RegistrationForm';
@@ -95,18 +95,7 @@ export default class ResultView extends Component {
                         {this.state.text !== '' ?
                             <Container>
                                 <div className="row col-md-12">
-                                    <div className="col-md-3">
-                                        <Freelancer>0</Freelancer>
-                                    </div>
-                                    <div className="col-md-3">
-                                        <Freelancer>1</Freelancer>
-                                    </div>
-                                    <div className="col-md-3">
-                                        <Freelancer>2</Freelancer>
-                                    </div>
-                                    <div className="col-md-3">
-                                        <Freelancer>3</Freelancer>
-                                    </div>
+                                   {Freelancer(this.state.text)}
                                 </div>
                             </Container> :
                             <h5>Please go back and enter something into the search box</h5>
