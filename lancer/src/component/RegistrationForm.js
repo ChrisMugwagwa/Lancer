@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 //import { render } from 'react-dom';
 import Container from '@material-ui/core/Container';
 import Form from 'react-bootstrap/Form'
@@ -24,9 +24,9 @@ var row = {
      margin: "auto"
     };
 
-export default function RegistrationForm(props) {
+export default function RegistrationForm() {
     const classes = useStyles();
-
+    
     return (
         <Container> 
             <Form >
