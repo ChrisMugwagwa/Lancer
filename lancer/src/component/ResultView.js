@@ -5,6 +5,7 @@ import Freelancer from './Freelancers';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import RegistrationForm from './RegistrationForm';
+import Cart from './Cart';
 import {
     Switch,
     Route,
@@ -19,88 +20,108 @@ export default function ResultView() {
         inputtedText: ''
     });
 
+    function editText() {
+        setPageView({
+            mode: 'input'
+        })
+    }
+
+    function saveText() {
+        setPageView(function () {
+            return {
+                mode: 'view',
+                text: pageView.inputtedText
+            }
+        })
+    }
+
+    function clearSearch() {
+        setPageView({
+            mode: 'edit',
+            text: '',
+            inputtedText: ''
+        })
+    }
+
+    function handleChange(e) {
+        setPageView({
+            inputtedText: e.target.value
+        });
+    }
 
 
-function editText() {
-    setPageView({
-        mode: 'input'
-    })
-}
+    return (
+        <Switch>
+            <Route exact path="/">
+                <div>
+                    <br />
+                    <Link to="/search">
+                        <Button onClick={editText}>Find a Lancer</Button>
+                    </Link>
+                ||
+                <Link to="/register">
+                        <Button onClick={editText}>Register</Button>
+                    </Link>
+                ||
+                <Link to="/memo">
+                        <Button onClick={editText}>Memoisation</Button>
+                    </Link>
+                    <hr />
 
-function saveText() {
-    setPageView(function () {
-        return {
-            mode: 'view',
-            text: pageView.inputtedText
-        }
-    })
-}
+                </div>
+            </Route>
 
-function clearSearch() {
-    setPageView({
-        mode: 'edit',
-        text: '',
-        inputtedText: ''
-    })
-}
+            <Route exact path="/search">
+                <div>
+                    <br />
+                    <Link to="/">
+                        <Button onClick={clearSearch}> BACK</Button>
+                    </Link>
+                    <TextField placeholder="Search Here" onChange={handleChange} />
+                    <Link to="/search/results">
+                        <Button onClick={(e) => saveText(e)}>SEARCH</Button>
+                    </Link>
+                    <hr />
+                </div>
+            </Route>
 
-function handleChange(e) {
-    setPageView({
-        inputtedText: e.target.value
-    });
-}
+            <Route exact path="/search/results">
+                <div>
+                    <br />
+                    <Link to="/search">
+                        <Button onClick={clearSearch}> BACK</Button>
+                    </Link>
+                    <h5>Here are all results for: {pageView.text}
+                    </h5>
+                    <hr />
+                    {pageView.text !== '' ?
+                        <Container>
+                            <div className="row col-md-12">
+                                {Freelancer(pageView.text)}
+                            </div>
+                        </Container> :
+                        <h5>Please go back and enter something into the search box</h5>
+                    }
+                </div>
+            </Route>
 
-
-return (
-    <Switch>
-        <Route exact path="/">
-            <div>
-                <br />
-                <Link to="/search">
-                    <Button onClick={editText}>Find a Lancer</Button>
-                </Link>
-                <Link to="/search">
-                    <Button onClick={editText}>Register</Button>
-                </Link>
-                <hr />
-                <RegistrationForm></RegistrationForm>
-            </div>
-        </Route>
-
-        <Route exact path="/search">
-            <div>
+            <Route exact path="/register">
                 <br />
                 <Link to="/">
                     <Button onClick={clearSearch}> BACK</Button>
                 </Link>
-                <TextField placeholder="Search Here" onChange={handleChange} />
-                <Link to="/search/results">
-                    <Button onClick={(e) => saveText(e)}>SEARCH</Button>
-                </Link>
-                <hr />
-            </div>
-        </Route>
+                <RegistrationForm></RegistrationForm>
+            </Route>
 
-        <Route exact path="/search/results">
-            <div>
+            <Route exact path="/memo">
                 <br />
-                <Link to="/search">
+                <Link to="/">
                     <Button onClick={clearSearch}> BACK</Button>
                 </Link>
-                <h5>Here are all results for: {pageView.text}
-                </h5>
-                <hr />
-                {pageView.text !== '' ?
-                    <Container>
-                        <div className="row col-md-12">
-                            {Freelancer(pageView.text)}
-                        </div>
-                    </Container> :
-                    <h5>Please go back and enter something into the search box</h5>
-                }
-            </div>
-        </Route>
+                {Cart()}
+            </Route>
 
-    </Switch>
-);
-    }
+
+        </Switch>
+    );
+}
