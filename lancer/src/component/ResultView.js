@@ -118,7 +118,7 @@ export default function ResultView() {
                 <Link to="/">
                     <Button onClick={clearSearch}> BACK</Button>
                 </Link>
-                {Cart()}
+                <Cart></Cart>
             </Route>
 
 

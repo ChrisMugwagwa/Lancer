@@ -10,6 +10,13 @@ export default function Cart() {
         setStock(items => items.filter(i => i !== item))
      };
 
+     useEffect(() => {
+         //Didnt know this but using the back quote character ` (usually above tab,left of 1) allows
+         // you to put values in strings similar to python f-strings with the $ character (which is a template literal in ES6)
+        // so a line like: document.title = "You have: " + stockState.length + " items"; becomes
+        document.title = `You have ${stockState.length} items`
+     });
+
     return (
         <div>
             <h4>Stock Manager</h4>
