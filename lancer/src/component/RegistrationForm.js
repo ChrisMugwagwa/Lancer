@@ -57,7 +57,8 @@ export default function RegistrationForm() {
 
                 <Form.Row style={row}>
                 <Form.Group className="col-md-10 offset-md-1">
-                    <Form.File id="formcheck-api-custom" label="Upload Profile Picture" custom>
+                <Form.Label>Profile Picture</Form.Label>
+                    <Form.File id="formcheck-api-custom" label="Upload Image" custom>
                     </Form.File>
                 </Form.Group>
                 </Form.Row>
