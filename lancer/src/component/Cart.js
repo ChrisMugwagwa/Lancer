@@ -15,7 +15,12 @@ export default function Cart() {
          // you to put values in strings similar to python f-strings with the $ character (which is a template literal in ES6)
         // so a line like: document.title = "You have: " + stockState.length + " items"; becomes
         document.title = `You have ${stockState.length} items`
-     });
+
+        //This is the optional return statement of useState which will call the function on a dismount
+        return(() => {
+            document.title = "Lancer";
+        })
+     }, [stockState.length]);
 
     return (
         <div>
