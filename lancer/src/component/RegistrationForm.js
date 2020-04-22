@@ -24,9 +24,24 @@ var row = {
      margin: "auto"
     };
 
+
 export default function RegistrationForm() {
     const classes = useStyles();
-    
+    const [textBox, setTextBox] = useState({
+        value: "Please Enter Some Text"
+    })
+
+    const [selectBox, setSelectBox] = useState({
+        value: "apple"
+    })
+
+    function handleChange(e){
+        setTextBox({value: e.target.value})
+    }
+
+    function handleSelect(e){
+        setSelectBox({value: e.target.value})
+    }
     return (
         <Container> 
             <Form >
@@ -63,7 +78,18 @@ export default function RegistrationForm() {
                 </Form.Group>
                 </Form.Row>
                 
-        
+                <textarea value={textBox.value} onChange={handleChange}/>
+                <h5>Inputted Text:</h5>
+                <p>{textBox.value}</p>
+                <br/>
+                <select value={selectBox.value} onChange={handleSelect}             >
+                <option value="apple">Apple</option>
+                <option value ="pear">Pear</option>
+                <option value = "banana">Banana</option>
+                <option value="orange">Orange</option>
+                </select>    
+                <h5>Selected Element:</h5>
+                <p>{selectBox.value}</p>
                 <Button variant="primary" type="submit" className={classes.root}>
                     Submit
                 </Button>

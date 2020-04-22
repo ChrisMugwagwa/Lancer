@@ -10,7 +10,7 @@ import AuthContext from './context/auth-context';
 
 function App() {
   const [user, setUser] = useState({
-    loggedIn: false,
+    loggedIn: false
   })
 
   return (
@@ -21,11 +21,11 @@ function App() {
       <AuthContext.Provider value={
         {
           authenticated: user.loggedIn,
-          login: () =>{
-            setUser({loggedIn: true})
+          login: () => {
+            setUser({ loggedIn: true })
           },
-          logout: () =>{
-            setUser({loggedIn: false})
+          logout: () => {
+            setUser({ loggedIn: false })
           }
         }
       }>
