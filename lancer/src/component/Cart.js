@@ -23,39 +23,39 @@ export default function Cart() {
         })
     }, [stockState.length]);
 
-    function loginStatus() {
-        
-    }
-
     return (
-        
-            <div>
-                <h4>Stock Manager</h4>
-                <AuthContext.Consumer>
-                {()=>{
-                    if (AuthContext.authenticated === false) {
-                        return "NOT Logged In : " + AuthContext.authenticated;
+        <div>
+            <h4>Stock Manager</h4>
+            <AuthContext.Consumer>
+                {(status) => {
+                    if (status.authenticated === true) {
+                        return (<div>
+                            <h5>Logged In Successfully: {status.authenticated}</h5>
+                            <div>
+                                <h5>Availiable Items:</h5>
+                                {stockState.length === 0 ? (
+                                    <button onClick={() => setStock(initialItems)}>Refill</button>
+                                ) : (
+                                        <ul>
+                                            {stockState.map(item => (
+                                                <li key={item}>
+                                                    <button onClick={() => dispense(item)}>Buy</button> {item}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    )}
+                            </div>
+                        </div>)
+                    } else if (status.authenticated === false) {
+                        return <h5>Please login to view stock</h5>
                     } else {
-                        return "Logged In Successfully: " + AuthContext.authenticated;
+                        return <h5>Something went wrong: {status.authenticated}</h5>
                     }
                 }}
-                </AuthContext.Consumer>
-                
-                <div>
-                    <h5>Availiable Items:</h5>
-                    {stockState.length === 0 ? (
-                        <button onClick={() => setStock(initialItems)}>Refill</button>
-                    ) : (
-                            <ul>
-                                {stockState.map(item => (
-                                    <li key={item}>
-                                        <button onClick={() => dispense(item)}>Buy</button> {item}
-                                    </li>
-                                ))}
-                            </ul>
-                        )}
-                </div>
-            </div>
+            </AuthContext.Consumer>
+
+
+        </div>
     )
 
 }
