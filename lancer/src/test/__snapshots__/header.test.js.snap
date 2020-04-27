@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Displays the header 1`] = `
+<nav
+  className="navbar navbar-expand-sm navbar-dark bg-dark"
+  id="header"
+>
+  <span
+    className="navbar-brand"
+  >
+    Lancer
+  </span>
+  <div
+    aria-expanded={null}
+    className="navbar-collapse collapse"
+    id="responsive-navbar-nav"
+  >
+    <a
+      className="nav-link"
+      href="/"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+    >
+      Home
+    </a>
+    <a
+      className="nav-link"
+      href="/video"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+    >
+      Video
+    </a>
+    <a
+      className="nav-link"
+      href="/photography"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+    >
+      Photography
+    </a>
+    <a
+      className="nav-link"
+      href="/gdesign"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+    >
+      Graphic Design
+    </a>
+    <a
+      className="nav-link"
+      href="/register"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+    >
+      Register
+    </a>
+  </div>
+  <button
+    className="btn btn-primary"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    Login
+  </button>
+</nav>
+`;
