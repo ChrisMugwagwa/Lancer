@@ -37,12 +37,7 @@ function App() {
           <ResultView></ResultView>
           <br />
         </div>
-        <div>
-
-        </div>
-        {/*
-
-      */}
+        
         <div id="footer">
           <Footer>Quis autem vel eum iure reprehenderit</Footer>
         </div>
