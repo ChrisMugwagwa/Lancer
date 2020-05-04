@@ -22,9 +22,9 @@ export default class Header extends Component {
                 </Navbar.Collapse>
                 <AuthContext.Consumer>{(status) => {
                         if (status.authenticated === false) {
-                            return <Button onClick={status.login}>Login</Button>
+                            return <Button title="loginButton" onClick={status.login}>Login</Button>
                         } else {
-                            return <Button onClick={status.logout}>Logout</Button>
+                            return <Button title="loginButton" onClick={status.logout}>Logout</Button>
                         }
                     }
                 }</AuthContext.Consumer>
