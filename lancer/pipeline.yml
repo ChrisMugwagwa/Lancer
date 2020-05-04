@@ -1,0 +1,42 @@
+resources:
+  - name: lancer-repo
+    public: true
+    type: git
+    source:
+      uri: https://github.com/ChrisMugwagwa/Lancer.git
+      branch: chrdev
+
+  #- name: dev-image
+  #  type: docker-image
+  #  source: 
+  #  username: ((docker-hub-username))
+    #    email: ((docker-hub-email))
+  #    password: ((docker-hub-password))
+  #    repository: ((docker-hub-username))/devlancer
+
+jobs:
+  - name: run-image
+    public: true
+    plan:
+      - get: lancer-repo
+      - task: run
+        config:
+          platform: linux
+          image_resource:
+            type: docker-image
+            source:
+              repository: ((docker-hub-username))/devlancer   
+          run:
+            path: sh
+            args:
+              - -exc
+              - |
+                cd /usr/src/app
+                yarn install
+                yarn test
+          
+          
+            
+         
+          
+        
